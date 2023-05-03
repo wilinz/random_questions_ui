@@ -46,8 +46,8 @@ class AboutPage extends StatelessWidget {
             SizedBox(height: 10),
             _buildLinkButton(
               context,
-              'https://example.com/your_project_name/',
-              '项目下载地址',
+              'https://home.wilinz.com:9992/share/idbaSO_E',
+              'App下载地址',
             ),
           ],
         ),
