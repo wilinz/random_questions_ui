@@ -1,4 +1,4 @@
-name: flutter_template
+name: random_questions
 description: A new Flutter template.
 
 # The following line prevents the package from being accidentally published to
@@ -84,6 +84,7 @@ flutter:
 
   assets:
     - images/logo.png
+    - images/my.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -116,9 +117,9 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
 msix_config:
-  display_name: flutter_template
+  display_name: random_questions
   publisher_display_name: wilinz
-  identity_name: com.wilinz.flutter_template
+  identity_name: com.wilinz.random_questions
   msix_version: 1.0.0.0
   logo_path: images/logo.png
   capabilities: internetClient

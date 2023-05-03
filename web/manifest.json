@@ -1,6 +1,6 @@
 {
-    "name": "flutter_template",
-    "short_name": "flutter_template",
+    "name": "random_questions",
+    "short_name": "random_questions",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,4 +1,4 @@
-package com.wilinz.flutter_template
+package com.wilinz.random_questions
 
 import io.flutter.embedding.android.FlutterActivity
 

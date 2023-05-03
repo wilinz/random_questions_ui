@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/data/model/post_questions/questions.dart';
-import 'package:flutter_template/data/network.dart';
+import 'package:random_questions/data/model/post_questions/questions.dart';
+import 'package:random_questions/data/network.dart';
 
 class ImportQuestionsPage extends StatefulWidget {
   @override

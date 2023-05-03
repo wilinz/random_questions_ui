@@ -5,7 +5,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_template/ui/color_schemes.g.dart';
+import 'package:random_questions/ui/color_schemes.g.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:window_size/window_size.dart';
 

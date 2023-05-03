@@ -1,15 +1,15 @@
 #!/bin/sh
 brew install create-dmg
-test -f flutter_template.dmg && rm flutter_template.dmg
+test -f random_questions.dmg && rm random_questions.dmg
 create-dmg \
   --volname "Flutter Template" \
   --volicon "./AppIcon.icns" \
   --window-pos 200 120 \
   --window-size 800 500 \
   --icon-size 100 \
-  --icon "flutter_template.app" 200 190 \
-  --hide-extension "flutter_template.app" \
+  --icon "random_questions.app" 200 190 \
+  --hide-extension "random_questions.app" \
   --app-drop-link 600 185 \
-  "flutter_template.dmg" \
-  "../build/macos/Build/Products/Release/flutter_template.app"
+  "random_questions.dmg" \
+  "../build/macos/Build/Products/Release/random_questions.app"
 

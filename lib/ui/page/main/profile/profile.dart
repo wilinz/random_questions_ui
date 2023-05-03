@@ -95,7 +95,7 @@ class _ProfilePageState extends State<_ProfilePage>
                                 text:
                                     "一个 Flutter App 模板，可以让你快速开发 App\n"),
                             TextSpan(
-                                text: "https://github.com/wilinz/flutter_template",
+                                text: "https://github.com/wilinz/random_questions",
                                 style: TextStyle(
                                   color: Colors.blue,
                                 ),
@@ -103,7 +103,7 @@ class _ProfilePageState extends State<_ProfilePage>
                                   ..onTap = () {
                                     launcher.launchUrl(
                                         Uri.parse(
-                                            "https://github.com/wilinz/flutter_template"),
+                                            "https://github.com/wilinz/random_questions"),
                                         mode: LaunchMode.externalApplication);
                                   })
                           ]),

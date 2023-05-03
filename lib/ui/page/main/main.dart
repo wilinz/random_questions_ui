@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/data/model/get_questions/get_questions.dart';
-import 'package:flutter_template/ui/route.dart';
+import 'package:random_questions/data/model/get_questions/get_questions.dart';
+import 'package:random_questions/ui/route.dart';
 
 import '../../../data/network.dart';
 import 'home/home.dart';
@@ -48,6 +48,8 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
             onSelected: (value) {
               if (value == 'import_questions') {
                 Navigator.pushNamed(context, AppRoute.importQuestionsPage);
+              }else if (value == 'about') {
+                Navigator.pushNamed(context, AppRoute.aboutPage);
               }
             },
             itemBuilder: (BuildContext context) {
@@ -55,6 +57,10 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
                 PopupMenuItem<String>(
                   value: 'import_questions',
                   child: Text('导入题目'),
+                ),
+                PopupMenuItem<String>(
+                  value: 'about',
+                  child: Text('关于'),
                 )
               ];
             },
