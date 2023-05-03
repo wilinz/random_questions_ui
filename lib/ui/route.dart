@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_template/ui/page/import_questions/import_questions.dart';
 
 import 'page/login/login.dart';
 import 'page/main/main.dart';
@@ -17,6 +18,8 @@ class AppRoute {
 
   static const String mainPage = "mainPage";
 
+  static const String importQuestionsPage = "importQuestionsPage";
+
   ///路由表配置
   static Map<String, WidgetBuilder> routes = {
     loginPage: (context) {
@@ -26,5 +29,6 @@ class AppRoute {
     },
     splashPage: (context) => const SplashPage(),
     mainPage: (context) => const MainPage(),
+    importQuestionsPage: (context) => ImportQuestionsPage(),
   };
 }
