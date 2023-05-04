@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart' as launcher;
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
@@ -67,14 +68,8 @@ class AboutPage extends StatelessWidget {
 
   // 启动浏览器并跳转到指定URL
   void _launchURL(BuildContext context, String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('无法打开 $url'),
-        ),
-      );
-    }
+    launcher.launchUrl(
+        Uri.parse(url),
+        mode: LaunchMode.externalApplication);
   }
 }
