@@ -50,6 +50,12 @@ class AboutPage extends StatelessWidget {
               'https://home.wilinz.com:9992/share/idbaSO_E',
               'App下载地址',
             ),
+            SizedBox(height: 10),
+            _buildLinkButton(
+              context,
+              'https://home.wilinz.com:9996',
+              '网页版地址',
+            ),
           ],
         ),
       ),
@@ -68,8 +74,6 @@ class AboutPage extends StatelessWidget {
 
   // 启动浏览器并跳转到指定URL
   void _launchURL(BuildContext context, String url) async {
-    launcher.launchUrl(
-        Uri.parse(url),
-        mode: LaunchMode.externalApplication);
+    launcher.launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
   }
 }

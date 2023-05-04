@@ -66,3 +66,10 @@ macos 安装 brew
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
+
+编译web相关
+```shell
+flutter run -d chrome --web-renderer html --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/ --release
+flutter build web --web-renderer html --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/ --release
+flutter pub run flutter_web_optimizer optimize --asset-base http://127.0.0.1:8090/
+```
