@@ -11,7 +11,7 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _MainPage();
+    return const _MainPage();
   }
 }
 
@@ -25,11 +25,13 @@ class _MainPage extends StatefulWidget {
 class _MainPageState extends State<_MainPage> {
   @override
   Widget build(BuildContext context) {
-    return RandomQuestionPage();
+    return const RandomQuestionPage();
   }
 }
 
 class RandomQuestionPage extends StatefulWidget {
+  const RandomQuestionPage({super.key});
+
   @override
   _RandomQuestionPageState createState() => _RandomQuestionPageState();
 }
@@ -42,7 +44,7 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('随机选题系统'),
+        title: const Text('随机选题系统'),
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) {
@@ -53,12 +55,12 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
               }
             },
             itemBuilder: (BuildContext context) {
-              return [
-                PopupMenuItem<String>(
+              return const[
+                 PopupMenuItem<String>(
                   value: 'import_questions',
                   child: Text('导入题目'),
                 ),
-                PopupMenuItem<String>(
+                 PopupMenuItem<String>(
                   value: 'about',
                   child: Text('关于'),
                 )
@@ -69,18 +71,18 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
       ),
       body: CustomScrollView(slivers: [
         SliverPadding(
-          padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+          padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
           sliver: SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   '输入学号：',
                   style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 TextField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: "学号",
                       hintText: "您的学号",
                       border: OutlineInputBorder(
@@ -89,26 +91,26 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
                     _studentId = value.trim();
                   },
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: () {
                     _selectRandomQuestion();
                   },
                   child: Text('根据学号随机选择题目'),
                 ),
-                SizedBox(height: 16.0),
-                Text(
+                const SizedBox(height: 16.0),
+                const Text(
                   '或随机选择6道题目：',
                   style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 ElevatedButton(
                   onPressed: () {
                     _selectRandomQuestions();
                   },
-                  child: Text('随机选择6道题目'),
+                  child: const Text('随机选择6道题目'),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
               ],
             ),
           ),
@@ -119,13 +121,13 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
               delegate: SliverChildBuilderDelegate(
                   childCount: _questions.length, (_, index) {
             return Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: SelectableText(
                     '${index + 1}. ${_questions[index]}',
-                    style: TextStyle(fontSize: 14.0),
+                    style: const TextStyle(fontSize: 14.0),
                   ),
                 ),
               ),

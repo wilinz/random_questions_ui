@@ -9,7 +9,7 @@ flutter pub run build_runner build
 
 Web运行在指定端口
 ```shell
-flutter run -d chrome --web-port 8888  --web-hostname 0.0.0.0
+flutter run -d chrome --web-port 8090  --web-hostname 0.0.0.0
 ```
 
 Json to dart:
@@ -69,7 +69,8 @@ macos 安装 brew
 
 编译web相关
 ```shell
-flutter run -d chrome --web-renderer html --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/ --release
-flutter build web --web-renderer html --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/ --release
-flutter pub run flutter_web_optimizer optimize --asset-base http://127.0.0.1:8090/
+#flutter build apk --tree-shake-icons
+flutter build web --web-renderer html --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/ --release 
+cp build/app/intermediates/assets/release/mergeReleaseAssets/flutter_assets/fonts/MaterialIcons-Regular.otf build/web/assets/fonts
+flutter pub run flutter_web_optimizer optimize --asset-base https://home.wilinz.com:9996/
 ```
