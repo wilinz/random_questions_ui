@@ -1,4 +1,4 @@
-# random_questions 一个 Flutter App 模板，可以让你快速开发 App
+# random_questions 随机抽题系统
 
 ## 下面是一些常用命令
 
@@ -9,7 +9,7 @@ flutter pub run build_runner build
 
 Web运行在指定端口
 ```shell
-flutter run -d chrome --web-port 8090  --web-hostname 0.0.0.0
+flutter run -d chrome --web-port 8888  --web-hostname 0.0.0.0
 ```
 
 Json to dart:
