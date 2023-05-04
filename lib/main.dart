@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> with WindowListener {
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     }
     return MaterialApp(
-        title: 'Flutter Template',
+        title: '随机抽题系统',
         theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
         darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
         routes: AppRoute.routes,

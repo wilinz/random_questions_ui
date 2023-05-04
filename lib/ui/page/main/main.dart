@@ -48,7 +48,7 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
             onSelected: (value) {
               if (value == 'import_questions') {
                 Navigator.pushNamed(context, AppRoute.importQuestionsPage);
-              }else if (value == 'about') {
+              } else if (value == 'about') {
                 Navigator.pushNamed(context, AppRoute.aboutPage);
               }
             },
@@ -67,71 +67,72 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '输入学号：',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+      body: CustomScrollView(slivers: [
+        SliverPadding(
+          padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+          sliver: SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '输入学号：',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8.0),
+                TextField(
+                  decoration: InputDecoration(
+                      labelText: "学号",
+                      hintText: "您的学号",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8)))),
+                  onChanged: (value) {
+                    _studentId = value.trim();
+                  },
+                ),
+                SizedBox(height: 16.0),
+                ElevatedButton(
+                  onPressed: () {
+                    _selectRandomQuestion();
+                  },
+                  child: Text('根据学号随机选择题目'),
+                ),
+                SizedBox(height: 16.0),
+                Text(
+                  '或随机选择6道题目：',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8.0),
+                ElevatedButton(
+                  onPressed: () {
+                    _selectRandomQuestions();
+                  },
+                  child: Text('随机选择6道题目'),
+                ),
+                SizedBox(height: 8.0),
+              ],
             ),
-            SizedBox(height: 8.0),
-            TextField(
-              decoration: InputDecoration(
-                  labelText: "学号",
-                  hintText: "您的学号",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8)))),
-              onChanged: (value) {
-                _studentId = value.trim();
-              },
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                _selectRandomQuestion();
-              },
-              child: Text('根据学号随机选择题目'),
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              '或随机选择6道题目：',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8.0),
-            ElevatedButton(
-              onPressed: () {
-                _selectRandomQuestions();
-              },
-              child: Text('随机选择6道题目'),
-            ),
-            SizedBox(height: 16.0),
-            Expanded(
-              child: ListView.builder(
-                // padding: const EdgeInsets.all(16.0),
-                shrinkWrap: true,
-                physics: AlwaysScrollableScrollPhysics(),
-                itemCount: _questions.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: SelectableText(
-                          '${index + 1}. ${_questions[index]}',
-                          style: TextStyle(fontSize: 18.0),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
+          ),
         ),
-      ),
+        SliverPadding(
+          padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+          sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                  childCount: _questions.length, (_, index) {
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: SelectableText(
+                    '${index + 1}. ${_questions[index]}',
+                    style: TextStyle(fontSize: 14.0),
+                  ),
+                ),
+              ),
+            );
+          })),
+        )
+      ]),
     );
   }
 

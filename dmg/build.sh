@@ -2,7 +2,7 @@
 brew install create-dmg
 test -f random_questions.dmg && rm random_questions.dmg
 create-dmg \
-  --volname "Flutter Template" \
+  --volname "随机抽题系统" \
   --volicon "./AppIcon.icns" \
   --window-pos 200 120 \
   --window-size 800 500 \
