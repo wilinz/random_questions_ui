@@ -3,8 +3,6 @@ import 'package:random_questions/data/model/get_questions/get_questions.dart';
 import 'package:random_questions/ui/route.dart';
 
 import '../../../data/network.dart';
-import 'home/home.dart';
-import 'profile/profile.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

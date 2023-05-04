@@ -55,6 +55,7 @@ dependencies:
   url_launcher: ^6.1.10
   connectivity_plus: ^3.0.3
   rxdart: ^0.27.7
+  functional_widget_annotation: ^0.10.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding.git
@@ -73,6 +74,7 @@ dev_dependencies:
   msix: ^3.7.0
   floor_generator: ^1.4.0
   flutter_web_optimizer: ^1.2.0
+  functional_widget: ^0.10.0
 
 # The following section is specific to Flutter packages.
 flutter:
