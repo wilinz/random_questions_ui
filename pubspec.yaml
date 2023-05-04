@@ -73,6 +73,7 @@ dev_dependencies:
   json_serializable: ^6.5.4
   msix: ^3.7.0
   floor_generator: ^1.4.0
+  flutter_web_optimizer: ^1.2.0
 
 # The following section is specific to Flutter packages.
 flutter:

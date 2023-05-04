@@ -42,7 +42,7 @@ class _RandomQuestionPageState extends State<RandomQuestionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('自动随机选题系统'),
+        title: Text('随机选题系统'),
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) {
